@@ -63,6 +63,7 @@ namespace DemoExam2
                 Name = "Edit",
                 HeaderText = string.Empty,
                 Text = "✏",
+                UseColumnTextForButtonValue = true,
                 Width = 30
             };
             DataGridViewButtonColumn deleteColumn = new DataGridViewButtonColumn()
@@ -70,6 +71,7 @@ namespace DemoExam2
                 Name = "Delete",
                 HeaderText = string.Empty,
                 Text = "🗑",
+                UseColumnTextForButtonValue = true,
                 Width = 30
             };
             dataGridView1.Columns.AddRange(idColumn,nameColumn, emailColumn, photoColumn, editColumn, deleteColumn);
@@ -94,14 +96,42 @@ namespace DemoExam2
             }
         }
 
+        /// <summary>
+        /// Удаление студента из БД test.students и из dataTable
+        /// </summary>
+        /// <param name="id">Идентификатор студента</param>
+        /// <param name="rowIndex">Индекс строки</param>
+        private void DeleteStudent(int id, int rowIndex)
+        {
+            using (MySqlConnection connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["connection"].ConnectionString))
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = connection;
+                command.CommandText = "DELETE FROM students WHERE id = @id;";
+                command.Parameters.AddWithValue("@id", id);
+                connection.Open();
+                if (command.ExecuteNonQuery() > 0) dataTable.Rows.RemoveAt(rowIndex);
+            }
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
 
+            if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index) DeleteStudent((int) dataGridView1.Rows[e.RowIndex].Cells["ID"].Value, e.RowIndex);
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonAddStudent_Click(object sender, EventArgs e)
+        {
+            using (AddStudentForm addStudentForm = new AddStudentForm())
+            {
+                if (addStudentForm.ShowDialog() == DialogResult.OK) LoadData();
+            }
         }
     }
 }
