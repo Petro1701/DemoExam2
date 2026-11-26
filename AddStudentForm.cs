@@ -20,6 +20,7 @@ namespace DemoExam2
         {
             InitializeComponent();
             labelNameUser.Text = CurrentUser.Name;
+            dateTimePickerBirthDate.MaxDate = DateTime.Now;
         }
 
         protected virtual void OnSaveClick(object sender, EventArgs e)
@@ -42,10 +43,11 @@ namespace DemoExam2
                 using (MySqlCommand command = new MySqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO students (nameStudent, emailStudent,PhotoBytesStudent) VALUES (@name, @email, @photoBytes)";
+                    command.CommandText = "INSERT INTO students (nameStudent, birthDate, emailStudent,PhotoBytesStudent) VALUES (@name,@birthDate, @email, @photoBytes)";
                     command.Parameters.AddWithValue("@name", textBoxName.Text);
                     command.Parameters.AddWithValue("@email", textBoxEmail.Text);
                     command.Parameters.AddWithValue("@photoBytes", photoBytes);
+                    command.Parameters.AddWithValue("@birthDate", dateTimePickerBirthDate.Value);
                     connection.Open();
                     if (command.ExecuteNonQuery() > 0)
                     {

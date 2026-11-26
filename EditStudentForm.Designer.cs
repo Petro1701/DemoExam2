@@ -28,15 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(384, 46);
+            // 
+            // labelNameOnTopPanel
+            // 
+            this.labelNameOnTopPanel.Size = new System.Drawing.Size(384, 29);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.FlatAppearance.BorderSize = 0;
             // 
             // EditStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 216);
             this.Name = "EditStudentForm";
             this.Text = "Редактирование";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             this.ResumeLayout(false);
 
         }

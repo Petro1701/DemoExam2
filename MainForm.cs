@@ -58,7 +58,7 @@ namespace DemoExam2
                 DataPropertyName = "birthDate",
                 HeaderText = "Дата рождения",
                 Width = 100,
-                DefaultCellStyle = new DataGridViewCellStyle() { Format = "dd.MM.yyyy" }
+                DefaultCellStyle = new DataGridViewCellStyle() { Format = "dd.MM.yyyy" } //Формат вывода даты на dataGrid
             };
             DataGridViewTextBoxColumn emailColumn = new DataGridViewTextBoxColumn()
             {
@@ -136,6 +136,7 @@ namespace DemoExam2
                 {
                     Id = Convert.ToInt32(row.Cells["ID"].Value),
                     Name = row.Cells["Name"].Value.ToString(),
+                    BirthDate = Convert.ToDateTime(row.Cells["BirthDate"].Value),
                     Email = row.Cells["Email"].Value.ToString(),
                     PhotoBytes = (byte[]) row.Cells["Photo"].Value
                 };

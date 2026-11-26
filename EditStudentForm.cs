@@ -27,6 +27,8 @@ namespace DemoExam2
             panel1.BackColor = Color.Navy;
             textBoxName.Text = student.Name;
             textBoxEmail.Text = student.Email;
+            //dateTimePickerBirthDate.MaxDate = DateTime.Now; проверь, будет работать или нет
+            dateTimePickerBirthDate.Value = student.BirthDate;
             using (MemoryStream ms = new MemoryStream(student.PhotoBytes))
             {
                 pictureBoxPhoto.Image = Image.FromStream(ms);
@@ -54,8 +56,9 @@ namespace DemoExam2
                 using (MySqlCommand command = new MySqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "UPDATE students SET nameStudent = @name, emailStudent = @email, PhotoBytesStudent = @photoBytes WHERE id = @id";
+                    command.CommandText = "UPDATE students SET nameStudent = @name,birthDate = @birthDate, emailStudent = @email, PhotoBytesStudent = @photoBytes WHERE id = @id";
                     command.Parameters.AddWithValue("@name", student.Name);
+                    command.Parameters.AddWithValue("@birthDate", student.BirthDate);
                     command.Parameters.AddWithValue("@email", student.Email);
                     command.Parameters.AddWithValue("@photoBytes", student.PhotoBytes);
                     command.Parameters.AddWithValue("@id", student.Id);

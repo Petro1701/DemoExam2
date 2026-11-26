@@ -13,5 +13,7 @@ namespace DemoExam2
         public string Email { get; set; }
         public byte[] PhotoBytes { get; set; }
 
+        public DateTime BirthDate { get; set; }
+
     }
 }
