@@ -12,7 +12,7 @@ namespace DemoExam2
 {
     public partial class EditStudentForm : Form
     {
-        public EditStudentForm()
+        public EditStudentForm(Student student)
         {
             InitializeComponent();
         }

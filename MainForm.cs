@@ -120,6 +120,22 @@ namespace DemoExam2
             if (e.RowIndex < 0) return;
 
             if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index) DeleteStudent((int) dataGridView1.Rows[e.RowIndex].Cells["ID"].Value, e.RowIndex);
+
+            if(e.ColumnIndex == dataGridView1.Columns["Edit"].Index)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                Student student = new Student()
+                {
+                    Id = Convert.ToInt32(row.Cells["ID"].Value),
+                    Name = row.Cells["Name"].Value.ToString(),
+                    Email = row.Cells["Email"].Value.ToString(),
+                    PhotoBytes = (byte[]) row.Cells["Photo"].Value
+                };
+                using (EditStudentForm editStudentForm = new EditStudentForm(student))
+                {
+                    if (editStudentForm.ShowDialog() == DialogResult.OK) LoadData();
+                }
+            }
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
