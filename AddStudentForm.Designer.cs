@@ -54,7 +54,7 @@
             this.panel1.Controls.Add(this.labelNameOnTopPanel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(359, 46);
             this.panel1.TabIndex = 0;
@@ -95,9 +95,9 @@
             this.panel2.Controls.Add(this.textBoxName);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 46);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(359, 165);
+            this.panel2.Size = new System.Drawing.Size(359, 168);
             this.panel2.TabIndex = 1;
             // 
             // buttonSave
@@ -108,7 +108,7 @@
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSave.ForeColor = System.Drawing.Color.White;
             this.buttonSave.Location = new System.Drawing.Point(204, 107);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(137, 38);
             this.buttonSave.TabIndex = 6;
@@ -120,9 +120,9 @@
             // 
             this.buttonChoosePhoto.BackColor = System.Drawing.Color.Silver;
             this.buttonChoosePhoto.Location = new System.Drawing.Point(9, 142);
-            this.buttonChoosePhoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonChoosePhoto.Margin = new System.Windows.Forms.Padding(2);
             this.buttonChoosePhoto.Name = "buttonChoosePhoto";
-            this.buttonChoosePhoto.Size = new System.Drawing.Size(113, 19);
+            this.buttonChoosePhoto.Size = new System.Drawing.Size(113, 24);
             this.buttonChoosePhoto.TabIndex = 5;
             this.buttonChoosePhoto.Text = "Выбрать фото";
             this.buttonChoosePhoto.UseVisualStyleBackColor = false;
@@ -132,7 +132,7 @@
             // 
             this.pictureBoxPhoto.BackColor = System.Drawing.Color.Silver;
             this.pictureBoxPhoto.Location = new System.Drawing.Point(9, 12);
-            this.pictureBoxPhoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxPhoto.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxPhoto.Name = "pictureBoxPhoto";
             this.pictureBoxPhoto.Size = new System.Drawing.Size(113, 124);
             this.pictureBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -143,7 +143,7 @@
             // 
             this.pictureBox2.Image = global::DemoExam2.Properties.Resources.Rubber;
             this.pictureBox2.Location = new System.Drawing.Point(137, 58);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(38, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -154,7 +154,7 @@
             // 
             this.pictureBox1.Image = global::DemoExam2.Properties.Resources.AddUser;
             this.pictureBox1.Location = new System.Drawing.Point(137, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(38, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,7 +165,7 @@
             // 
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxEmail.Location = new System.Drawing.Point(179, 59);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(172, 32);
             this.textBoxEmail.TabIndex = 1;
@@ -174,7 +174,7 @@
             // 
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxName.Location = new System.Drawing.Point(179, 12);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(172, 32);
             this.textBoxName.TabIndex = 0;
@@ -184,11 +184,11 @@
             this.AcceptButton = this.buttonSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 211);
+            this.ClientSize = new System.Drawing.Size(359, 214);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddStudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Добавление студента";
@@ -205,16 +205,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelNameOnTopPanel;
+        protected System.Windows.Forms.Panel panel1;
+        protected System.Windows.Forms.Label labelNameOnTopPanel;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label labelNameUser;
+        protected System.Windows.Forms.Label labelNameUser;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonChoosePhoto;
-        private System.Windows.Forms.PictureBox pictureBoxPhoto;
+        protected System.Windows.Forms.TextBox textBoxEmail;
+        protected System.Windows.Forms.TextBox textBoxName;
+        protected System.Windows.Forms.Button buttonSave;
+        protected System.Windows.Forms.Button buttonChoosePhoto;
+        protected System.Windows.Forms.PictureBox pictureBoxPhoto;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

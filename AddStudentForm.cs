@@ -19,6 +19,7 @@ namespace DemoExam2
         public AddStudentForm()
         {
             InitializeComponent();
+            labelNameUser.Text = CurrentUser.Name;
         }
 
         protected virtual void OnSaveClick(object sender, EventArgs e)
