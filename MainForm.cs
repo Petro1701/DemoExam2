@@ -37,20 +37,6 @@ namespace DemoExam2
                 DataPropertyName = "id",
                 Visible = false
             };
-            DataGridViewTextBoxColumn nameColumn = new DataGridViewTextBoxColumn()
-            {
-                Name = "Name",
-                DataPropertyName = "nameStudent",
-                HeaderText = "Имя студента",
-                Width = 100
-            };
-            DataGridViewTextBoxColumn emailColumn = new DataGridViewTextBoxColumn()
-            {
-                Name = "Email",
-                DataPropertyName = "emailStudent",
-                HeaderText = "Имя студента",
-                Width = 100
-            };
             DataGridViewImageColumn photoColumn = new DataGridViewImageColumn()
             {
                 Name = "Photo",
@@ -58,6 +44,28 @@ namespace DemoExam2
                 HeaderText = "Фото",
                 Width = 100,
                 ImageLayout = DataGridViewImageCellLayout.Stretch
+            };
+            DataGridViewTextBoxColumn nameColumn = new DataGridViewTextBoxColumn()
+            {
+                Name = "Name",
+                DataPropertyName = "nameStudent",
+                HeaderText = "Имя студента",
+                Width = 100
+            };
+            DataGridViewTextBoxColumn birthDateColumn = new DataGridViewTextBoxColumn()
+            {
+                Name = "BirthDate",
+                DataPropertyName = "birthDate",
+                HeaderText = "Дата рождения",
+                Width = 100,
+                DefaultCellStyle = new DataGridViewCellStyle() { Format = "dd.MM.yyyy" }
+            };
+            DataGridViewTextBoxColumn emailColumn = new DataGridViewTextBoxColumn()
+            {
+                Name = "Email",
+                DataPropertyName = "emailStudent",
+                HeaderText = "Имя студента",
+                Width = 100
             };
             DataGridViewButtonColumn editColumn = new DataGridViewButtonColumn()
             {
@@ -75,7 +83,7 @@ namespace DemoExam2
                 UseColumnTextForButtonValue = true,
                 Width = 30
             };
-            dataGridView1.Columns.AddRange(idColumn, photoColumn, nameColumn, emailColumn, editColumn, deleteColumn);
+            dataGridView1.Columns.AddRange(idColumn, photoColumn, nameColumn,birthDateColumn, emailColumn, editColumn, deleteColumn);
         }
 
         /// <summary>
@@ -87,7 +95,7 @@ namespace DemoExam2
             using (MySqlCommand command = new MySqlCommand())
             {
                 command.Connection = connection;
-                command.CommandText = "SELECT id, nameStudent, emailStudent,PhotoBytesStudent FROM students;";
+                command.CommandText = "SELECT id, nameStudent,birthDate, emailStudent,PhotoBytesStudent FROM students;";
                 connection.Open();
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
