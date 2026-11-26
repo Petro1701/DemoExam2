@@ -30,6 +30,7 @@ namespace DemoExam2
         private void SetupDataGridView()
         {
             dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.RowTemplate.Height = 100; //Высота строк
             DataGridViewTextBoxColumn idColumn = new DataGridViewTextBoxColumn()
             {
                 Name = "ID",
@@ -74,7 +75,7 @@ namespace DemoExam2
                 UseColumnTextForButtonValue = true,
                 Width = 30
             };
-            dataGridView1.Columns.AddRange(idColumn,nameColumn, emailColumn, photoColumn, editColumn, deleteColumn);
+            dataGridView1.Columns.AddRange(idColumn, photoColumn, nameColumn, emailColumn, editColumn, deleteColumn);
         }
 
         /// <summary>
